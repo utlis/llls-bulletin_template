@@ -12,7 +12,7 @@
 %・（スタイルファイルVersion2への対応）英語要約の行間広げ，字下げ対応のため，eabstract環境を新設。
 %------------------------------------------------------------
 \documentclass[b5paper,10pt,twocolumn,tombow]{jarticle}
-\usepackage{Lifelong10}
+\usepackage{llls}
 \usepackage{graphicx}
 \begin{document}
 \twocolumn[
@@ -39,7 +39,7 @@
  ファイルをそのまま使用して論文を作成することを推奨します。
 \end{abstract}
  \begin{keyword}
-キーワード： 生涯学習基盤経営，執筆要領，レイアウト 
+キーワード： 生涯学習基盤経営，執筆要領，レイアウト
 \end{keyword}
 \end{center}
 
@@ -191,7 +191,7 @@ $\backslash$jtitle\{\}コマンドの第1引数にタイトル（主題）を記
 ば，3人の場合には以下のようになります。
 \begin{verbatim}
 \begin{authors}
-\name{1}{本郷弥生} 
+\name{1}{本郷弥生}
 \name{2}{東大太郎}
 \name{3}{柏駒場}
 \end{authors}
@@ -217,7 +217,7 @@ $\backslash$jtitle\{\}コマンドの第1引数にタイトル（主題）を記
 
 \begin{verbatim}
 \begin{affiliation}
-\aff{1}{東京大学大学院教育学研究科} 
+\aff{1}{東京大学大学院教育学研究科}
 \aff{2}{生涯学習基盤経営学会}
 \aff{3}{その他組織}
 \end{eaffiliation}
@@ -274,9 +274,9 @@ $\backslash$subsubsection{}コマンドを使用してください。
 \small
 \begin{tabular}{ccc} \hline
 &記号 &用法 \\ \hline
-1 &（　） &説明・その他付加的に記述する事柄 \\ 
-2 &``　'' &引用箇所の表示 \\ 
-3 &\textit{Italic} &文中における欧文の書名・誌名 \\ 
+1 &（　） &説明・その他付加的に記述する事柄 \\
+2 &``　'' &引用箇所の表示 \\
+3 &\textit{Italic} &文中における欧文の書名・誌名 \\
 4 &『 』 &文中における和文の書名・誌名 \\ \hline
 \end{tabular}
  \caption{特定の記号の用法}
@@ -342,8 +342,8 @@ figure環境の代わりに，figure*環境を利
 \begin{center}
 \begin{tabular}{cc} \hline
 日本語 &英語 \\ \hline
-教授 & professor \\ 
-大学院生 & graduate student \\ 
+教授 & professor \\
+大学院生 & graduate student \\
 学部生 & undergraduate student \\ \hline
 \end{tabular}
  \caption{小さな表の例}
@@ -355,8 +355,8 @@ figure環境の代わりに，figure*環境を利
 \begin{center}
 \begin{tabular}{cc} \hline
 日本語 &英語 \\ \hline
-教授 & professor \\ 
-大学院生 & graduate student \\ 
+教授 & professor \\
+大学院生 & graduate student \\
 学部生 & undergraduate student \\ \hline
 \end{tabular}
  \caption{小さな表の例}
@@ -374,8 +374,8 @@ table環境の代わりに，table*環境を利
 \begin{center}
 \begin{tabular}{cc} \hline
 日本語 &英語 \\ \hline
-教授 & professor \\ 
-大学院生 & graduate student \\ 
+教授 & professor \\
+大学院生 & graduate student \\
 学部生 & undergraduate student \\ \hline
 \end{tabular}
  \caption{大きな表の例}
@@ -388,7 +388,7 @@ table環境の代わりに，table*環境を利
 \begin{tabular}{cc} \hline
 日本語 &英語 \\ \hline
 教授 & professor \\
-大学院生 & graduate student \\ 
+大学院生 & graduate student \\
 学部生 & undergraduate student \\ \hline
 \end{tabular}
  \caption{大きな表の例}
@@ -469,7 +469,7 @@ Varles, Jana ed. 『情報の要求と探索』 [\textit{Information Seeking:
 
 Schneider, Georg. \textit{Theory and History of Bibliography.}
  [\textit{Handbuch der Bibliographie.} Aufl., Berlin, Knopt, 1978,]
- tr. by R. R. Shaw, New York, Columbia University Press, 1934, p. 14--15. 
+ tr. by R. R. Shaw, New York, Columbia University Press, 1934, p. 14--15.
 \end{quote}
 
 \subsubsection{編集書の一部（図書形態の論文集の一論文を含む）の場合}
@@ -504,7 +504,7 @@ Groom, Geofrey. ``\textit{Bibliography of older material},'' in Garvin,
  研究集会論文集』 vol. 33, no. 3, 1977, p. 129--138.
 
 Brookes, Bertram C. ``Theory of the Bradford Laws,'' \textit{Journal of
- Documentation,} vol. 33, no. 3, 1977, p. 180--209. 
+ Documentation,} vol. 33, no. 3, 1977, p. 180--209.
 
 Nelson, Micheal J. and Tague, Jean M. ``Sprit Size-Rank Models for the
  Distribution of Index Terms,'' \textit{Journal of the American Society
@@ -550,28 +550,28 @@ Web上のリソースについては，書誌情報の最後に入手先URLと�
 \newpage
 \twocolumn[
 \begin{center}
-\etitle{Manual of Writing a Manuscript for 
+\etitle{Manual of Writing a Manuscript for
 Articles, Research Notes, and
- Materials in \textit{Studies in Lifelong 
-Learning Infrastructure Management}} 
+ Materials in \textit{Studies in Lifelong
+Learning Infrastructure Management}}
 \begin{eauthors}
-\name{1}{Yahoi HONGO} \name{2}{Tarou TOUDAI} 
+\name{1}{Yahoi HONGO} \name{2}{Tarou TOUDAI}
 \end{eauthors}
 \begin{eaffiliation}
-\eaff{1}{Graduate School of Education, 
+\eaff{1}{Graduate School of Education,
 the University of Tokyo}
- \eaff{2}{Society for Lifelong Learning 
+ \eaff{2}{Society for Lifelong Learning
 Infrastructure Management}
 \end{eaffiliation}
  \begin{eabstract}
-The paper describes style and layout of 
+The paper describes style and layout of
 manuscripts in \textit{the Studies in
-Lifelong Learning Infrastructure 
+Lifelong Learning Infrastructure
 Management}. You can use directly this
-  file when you make your manuscript.  
+  file when you make your manuscript.
  \end{eabstract}
 \begin{keyword}
-Keyword: Studies in Lifelong Learning 
+Keyword: Studies in Lifelong Learning
 Infrastructure Management, Script Manual, Layout
 \end{keyword}
 \end{center}
@@ -601,9 +601,9 @@ Infrastructure Management, Script Manual, Layout
 
 
 \begin{verbatim}
-\etitle{Manual of Writing a Manuscript 
-for Articles, Research Notes, and 
-Materials in \textit{Studies in Lifelong 
+\etitle{Manual of Writing a Manuscript
+for Articles, Research Notes, and
+Materials in \textit{Studies in Lifelong
 Learning Infrastructure Management}}
 \end{verbatim}
 
@@ -624,7 +624,7 @@ Learning Infrastructure Management}}
 ば，3人の場合には以下のようになります。
 \begin{verbatim}
 \begin{eauthors}
-\name{1}{Yayoi HONGO} 
+\name{1}{Yayoi HONGO}
 \name{2}{Tarou TOUDAI}
 \name{3}{Komaba KASHIWA}
 \end{eauthors}
@@ -651,8 +651,8 @@ Learning Infrastructure Management}}
 
 \begin{verbatim}
 \begin{eaffiliation}
-\eaff{1}{Graduate School of Education, 
-the University of Tokyo} 
+\eaff{1}{Graduate School of Education,
+the University of Tokyo}
 \eaff{2}{Society for Lifelong Learning Infrastructure
  Management}
 \eaff{3}{Another Organization}
@@ -675,12 +675,12 @@ eabstract環境の中に要約を\textbf{100語から150語で}記入してく�
  \begin{eabstract}
 The paper describes style and layout of
 manuscripts in the Studies in \textit{
-Lifelong Learning Infrastructure 
+Lifelong Learning Infrastructure
 Management}.
 You can use directly this
-file when you make your manuscript.  
+file when you make your manuscript.
  \end{eabstract}
-	
+
 \end{verbatim}
 
 
@@ -691,10 +691,10 @@ keyword環境の中に適切なキーワードを英語で\textbf{3つ程度}記
 
 \begin{verbatim}
 \begin{keyword}
-Keywords: Studies in Lifelong Learning 
-Infrastructure Management, 
+Keywords: Studies in Lifelong Learning
+Infrastructure Management,
 Script Manual, Layout
-\end{keyword}	
+\end{keyword}
 \end{verbatim}
 
 
@@ -712,9 +712,9 @@ Script Manual, Layout
 
 \begin{center}
 \etitle{Manual of Writing a Manuscript for Articles, Research Notes, and
- Materials in \textit{Studies in Lifelong Learning Infrastructure Management}} 
+ Materials in \textit{Studies in Lifelong Learning Infrastructure Management}}
 \begin{eauthors}
-\name{1}{Yahoi HONGO} \name{2}{Tarou TOUDAI} 
+\name{1}{Yahoi HONGO} \name{2}{Tarou TOUDAI}
 \end{eauthors}
 \begin{eaffiliation}
 \eaff{1}{Graduate School of Education, the University of Tokyo}
@@ -724,7 +724,7 @@ Script Manual, Layout
 The paper describes style and layout of manuscripts in \textit{the Studies in
   Lifelong Learning Infrastructure Management}. You can use
   directly this
-  file when you make your manuscript.  
+  file when you make your manuscript.
  \end{eabstract}
 \begin{keyword}
 Keywords: Studies in Lifelong Learning Infrastructure Management, Script Manual, Layout

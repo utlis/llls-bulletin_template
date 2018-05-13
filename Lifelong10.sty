@@ -1,0 +1,449 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 2010.3.8 Ver. 2.1 改訂者：今井福司
+%% 改訂内容
+%%　・図のキャプションの上下空白を調整。
+%%　・注の文字サイズを本文と同じサイズに変更
+%%　・目次と本文の間にスペースを入れた。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 2010.2.19 Ver. 2　改訂者: 今井福司
+%% 改訂内容
+%% ・ページの割り付け位置の修正
+%% ・和文タイトル，英文タイトルと英文アブストラクトのエリア内での行間修正
+%% ・和文アブストラクト，英文アブストラクトの行下げ設定
+%% ・巻号から日本語タイトルまでの改行幅を小さくした。
+%% ・日本語タイトルから著者名までの改行幅を大きくした。
+%% ・「生涯学習基盤経営　第34号 2009年」→「生涯学習基盤経営研究　第34号 2009年度」
+%% ・その他，相対値で指定していた箇所を絶対値と置き換え，厳密なレイアウトができるようにした。
+%% Ver. 1からの移行方法
+%% ・jtitleが2つ引数を取るようになりました。第1引数には主題，第2引数には副題をいれてください。
+%%   副題をつけない場合は第2引数は「何も入力しない」でください。
+%% ・英文アブストラクト環境をabstractからeabstractへ書き換える。
+%% ・英文アブストラクトの前にある\bigskipを削るかコメントアウトする。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%『生涯学習基盤経営研究』LaTeXスタイルファイル Ver.1
+%%【著作権者】東京大学大学院教育学研究科生涯学習基盤経営コース
+%%【制作日】2009年1月6日
+%%【種　別】LaTeXテンプレートファイル
+%%【連絡先】LLkiyou@p.u-tokyo.ac.jp
+%%【配布元】東京大学大学院教育学研究科生涯学習基盤経営コースのサーバーより配布
+%%	　http://llls.p.u-tokyo.ac.jp/
+%%【転　載】著作権者，配布元の明記をした上で自由にどうぞ。可能であれば，
+%%　転載前に連絡をお願いします。
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{multicol}
+\usepackage{graphics}
+\usepackage{boxedminipage}
+\usepackage{url} 
+\usepackage{endnotes}
+
+\topmargin=-2.7cm
+%\topmargin=-3.25cm
+\headheight=0cm
+\oddsidemargin=-1.2cm  
+\setlength{\textwidth}{46zw}
+\setlength{\textheight}{44\baselineskip}
+\columnsep=0.7cm
+\hoffset=-.5in% 左へ 0.5インチ版面全体を移動
+
+\let\footnote=\endnote
+\renewcommand{\notesname}{注}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%sectionの再定義%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\section}{%
+	\@startsection{section}{1}{\z@}%
+	{.3\Cvs \@plus.8\Cdp \@minus.2 \Cdp}%
+	{.1\Cvs \@plus.3\Cdp}%
+	{\reset@font\bfseries\large}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%subsectionの再定義%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\subsection}{%
+	\@startsection{subsection}{1}{\z@}%
+	{.2\Cvs \@plus.5\Cdp \@minus.2 \Cdp}%
+	{.1\Cvs \@plus.3\Cdp}%
+	{\reset@font\bfseries}}
+
+
+\renewcommand{\subsubsection}{%
+	\@startsection{subsubsection}{1}{\z@}%
+	{.1\Cvs \@plus.5\Cdp \@minus.2 \Cdp}%
+	{.1\Cvs \@plus.3\Cdp}%
+	{\reset@font}}
+
+%\renewcommand{\thesection}{\@Roman\c@section}%
+
+\def\initialize{
+\newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% captionの上下空白の設定
+% ref: http://osksn2.hep.sci.osaka-u.ac.jp/~naga/miscellaneous/tex/tex-tips2.html
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\abovecaptionskip=0pt
+\belowcaptionskip=0pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%enumerateのナンバリング
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\labelenumi}{\arabic{enumi}}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%enumerateの行間調整　ref:http://www.nsknet.or.jp/~tony/TeX/faq/macro.htm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter%% プリアンブルで定義する場合は必須
+
+\renewenvironment{enumerate}%% enumerate 環境を再定義
+  {\ifnum \@enumdepth >\thr@@\@toodeep\else% 
+   \advance\@enumdepth\@ne
+   \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
+   \list{\csname label\@enumctr\endcsname}{%
+      \iftdir
+         \ifnum \@listdepth=\@ne \topsep.5\normalbaselineskip
+           \else\topsep\z@\fi
+         % 元々ここにあった定義を...
+         \labelwidth1zw \labelsep.3zw
+         \ifnum \@enumdepth=\@ne \leftmargin1zw\relax
+           \else\leftmargin\leftskip\fi
+         \advance\leftmargin 1zw
+      \fi
+         \parskip\z@ \itemsep\z@ \parsep\z@% こちらに移動
+         \usecounter{\@enumctr}%
+         \def\makelabel##1{\hss\llap{##1}}}%
+   \fi}{\endlist}
+
+\makeatother%% プリアンブルで定義する場合は必須
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%itemizeの行間調整　ref:http://www.nsknet.or.jp/~tony/TeX/faq/macro.htm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter%% プリアンブルで定義する場合は必須
+
+\renewenvironment{itemize}%% itemize 環境を再定義
+  {\ifnum \@itemdepth >\thr@@\@toodeep\else 
+   \advance\@itemdepth\@ne
+   \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+   \expandafter
+   \list{\csname \@itemitem\endcsname}{%
+      \iftdir
+         \ifnum \@listdepth=\@ne \topsep.5\normalbaselineskip
+           \else\topsep\z@\fi
+         % 元々ここにあった定義を...
+         \labelwidth1zw \labelsep.3zw
+         \ifnum \@itemdepth =\@ne \leftmargin1zw\relax
+           \else\leftmargin\leftskip\fi
+         \advance\leftmargin 1zw
+      \fi
+         \parskip\z@ \itemsep\z@ \parsep\z@% こちらに移動
+         \def\makelabel##1{\hss\llap{##1}}}%
+   \fi}{\endlist}
+
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%descriptionの行間調整　ref:http://www.nsknet.or.jp/~tony/TeX/faq/macro.htm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter%% プリアンブルで定義する場合は必須
+
+\renewenvironment{description}%% description 環境を再定義
+  {\list{}{\labelwidth\z@ \itemindent-\leftmargin
+   \iftdir
+     \leftmargin\leftskip \advance\leftmargin3\Cwd
+     \rightmargin\rightskip
+     \labelsep=1zw% 元々ここにあった定義を...
+   \fi
+     \itemsep\z@% こちらに移動
+     \listparindent\z@ \topskip\z@ \parskip\z@ \partopsep\z@% こちらに移動
+           \let\makelabel\descriptionlabel}}{\endlist}
+
+\makeatother%% プリアンブルで定義する場合は必須
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ヘッダーの誌名と号数の記述用。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\voltitle#1#2{
+        \vspace{0.4cm}
+    	{
+	生涯学習基盤経営研究 第#1号 #2年度
+	}{
+%\bigskip{}
+%\smallskip
+%\vspace{0.1cm}
+}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%tableofcontents命令でSectionのページ数が出力されないようにする
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand*{\l@section}[2]{%
+  \ifnum \c@tocdepth >\z@
+    \addpenalty{\@secpenalty}%
+    \addvspace{1.0em \@plus\p@}%
+    \begingroup
+      \parindent\z@ \rightskip\@pnumwidth \parfillskip-\rightskip
+      \leavevmode\bfseries
+      \setlength\@lnumwidth{1.5em}%
+      \advance\leftskip\@lnumwidth \hskip-\leftskip
+      #1\nobreak\hfil\nobreak\hbox to\@pnumwidth{\hss}\par
+    \endgroup
+  \fi}
+\makeatother%% プリアンブルで定義する場合は必須
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%tableofcontents命令でsubsection以下のリーダー及びページ数が出力されな
+%いようにする
+%ref:http://xymtex.com/ 「LaTeX2eまくろのやちまた」第14章から第17章
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\def\numberline#1{\hbox to3.1zw{#1\hfil}} 
+\def\@dottedtocline#1#2#3#4#5{\ifnum #1>\c@tocdepth \else 
+\vskip \z@ plus .2pt 
+{\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip 
+\parindent #2\relax\@afterindenttrue 
+\interlinepenalty\@M 
+\leavevmode 
+\@tempdima #3\relax \advance\leftskip \@tempdima \hbox{}\hskip
+-\leftskip  #4\hbox to0.33333zw{\hss\raise.4zh\hbox{}\hss}\hfill 
+\nobreak \hbox to\@pnumwidth{\hfil\rm}\par}\fi} 
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%タイトルの定義
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter%% プリアンブルで定義する場合は必須
+\def\jtitle#1#2{%
+\def\@tempb{#1}%
+\def\@tempb{#2}%
+\ifx\@tempb\empty
+\begin{flushleft}
+{\LARGE
+  {\renewcommand{\baselinestretch}{1}\selectfont 
+    \bf #1 \\}}{}
+\end{flushleft}
+\vspace{1mm}
+\else
+\begin{flushleft}
+	{\LARGE\bf #1\\}{\vspace{1zw}\large\bf #2}{}
+\end{flushleft}
+\vspace{1mm}
+\fi
+
+%\ifx\@tempb\empty
+%\begin{flushleft}
+%{\LARGE
+%  {\renewcommand{\baselinestretch}{1}\selectfont 
+%    \bf #1 \\}}{}
+%\end{flushleft}
+%\else
+%\begin{flushleft}
+%	{\LARGE\bf #1\\}{\vspace{1zw}\large\bf #2}{}
+%\end{flushleft}
+%\fi
+
+
+}
+\makeatother%% プリアンブルで定義する場合は必須
+
+\makeatletter%% プリアンブルで定義する場合は必須
+\def\etitle#1{
+ \begin{center}
+{\Large
+	{\renewcommand{\baselinestretch}{1.2}\selectfont 
+          \bf #1\\[2mm] }
+	}{}
+ \end{center}
+}
+\makeatother%% プリアンブルで定義する場合は必須
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%endnotesの定義
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\def\enotesize{\normalsize}
+\def\enoteformat{\rightskip\z@ \leftskip1.8em \parindent=\z@
+     \leavevmode\llap{\small{\hbox{${\@theenmark})$ }}}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%endnotesのコマンド定義
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\enhere}{
+\renewcommand{\baselinestretch}{0.9}\selectfont
+\begingroup \parindent 0ex \parskip 0ex \def\ennotesize{\normalsize}
+\theendnotes \endgroup
+\renewcommand{\baselinestretch}{1}\selectfont
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%名前の定義
+%ref:http://mikilab.doshisha.ac.jp/dia/seminar/1999/latex/download.html
+%同志社大学三木研究室のスタイルを参照
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{authors}{\hfill\Large}{\smallskip\\}
+\newenvironment{eauthors}{\Large}{\bigskip\\}
+
+\def\name#1#2{
+\ifnum#1=1
+	#2 $^{\dag}$
+\else
+	\ifnum#1=2
+		#2 $^{\dag\dag}$
+	\else
+		\ifnum#1=3
+			#2  $^{\ddag}$
+		\else
+                        \ifnum#1=4
+			#2  $^{\ddag\ddag}$
+                        \else
+                              #2  $^{\ddag\ddag\ddag}$
+                              \fi
+		\fi
+	\fi
+\fi
+}
+
+
+\def\ename#1#2#3{
+\ifnum#1=1
+	#2{\footnotesize #3} $^{\dag}$
+\else
+	\ifnum#1=2
+		#2{\footnotesize #3} $^{\dag\dag}$
+	\else
+		\ifnum#1=3
+			#2{\footnotesize #3}  $^{\ddag}$
+		\else
+			\ifnum#1=4
+                        #2{\footnotesize #3}  $^{\ddag\ddag}$
+                        \else
+                        #2{\footnotesize #3}  $^{\ddag\ddag}$
+                        \fi
+		\fi
+	\fi
+\fi
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%所属の定義
+%ref:http://mikilab.doshisha.ac.jp/dia/seminar/1999/latex/download.html
+%同志社大学三木研究室のスタイルを参照
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newenvironment{affiliation}{\hfill}{}
+\newenvironment{eaffiliation}{}{}
+
+
+\def\aff#1#2{
+\ifnum#1=1
+%	\footnotetext{$^{\dag}$#2}　%
+	{$^{\dag}$#2}　%
+\else
+	\ifnum#1=2
+		{$^{\dag\dag}$ #2}　%
+	\else
+		\ifnum#1=3
+			{$^{\ddag}$ #2}　%
+		\else
+                        \ifnum#1=4
+			{$^{\ddag\ddag}$ #2}　%
+                        \else
+			            {$^{\ddag\ddag\ddag}$ #2}　%
+                                    \fi
+       		\fi
+	\fi
+\fi
+}
+
+
+\def\eaff#1#2{
+\ifnum#1=1
+	$^{\dag}$ #2　%
+\else
+	\ifnum#1=2
+		\\$^{\dag\dag}$ #2　%
+	\else
+		\ifnum#1=3
+			\\$^{\ddag}$ #2　%
+		\else
+                \ifnum#1=4
+			\\$^{\ddag\ddag}$ #2　%
+                        \else
+                        	\\$^{\ddag\ddag\ddag}$ #2　%
+                                \fi
+		\fi
+	\fi
+\fi
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%abstract環境の更新
+%ref:http://mikilab.doshisha.ac.jp/dia/seminar/1999/latex/download.html
+%同志社大学三木研究室のスタイルを参照
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewenvironment{abstract}{
+%
+\begin{minipage}{14cm}%
+\hspace{0.6zw}\small
+}%
+{\end{minipage}\bigskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%英語abstract環境の更新
+%ref:http://mikilab.doshisha.ac.jp/dia/seminar/1999/latex/download.html
+%同志社大学三木研究室のスタイルを参照
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{eabstract}{
+%
+\begin{minipage}{14cm}%
+\renewcommand{\baselinestretch}{1.4}\selectfont
+\vspace{2zw}\hspace{1.5zw}\small
+}%
+{\end{minipage}\vspace{2zw}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%keyword環境の新設
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{keyword}{%
+%
+\begin{minipage}{14cm}%
+\small}%
+{\end{minipage}\bigskip}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%引用記号の再定義
+%LaTeX階梯　p.206
+%ref:http://mikilab.doshisha.ac.jp/dia/seminar/1999/latex/download.html
+%同志社大学三木研究室のスタイルを参照
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\def\@biblabel#1{#1)}
+%\def\@cite#1#2{{$^{\mbox{\scriptsize $#1$}}$%
+%	\if@tempswa , #2\fi}$^{\mbox{\scriptsize $)$}}$ }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%最終ページの表記変更
+%ref:http://mikilab.doshisha.ac.jp/dia/seminar/1999/latex/download.html
+%同志社大学三木研究室のスタイルを参照
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\ps@lastpage{\let\@mkboth\@gobbletwo
+\def\@oddhead{} \def\@oddfoot{\hfil\thepage」\hfil}
+\def\@evenhead{} \def\@evenfoot{\thepage」}}

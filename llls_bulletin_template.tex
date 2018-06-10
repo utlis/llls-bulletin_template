@@ -16,7 +16,21 @@
 \usepackage{llls}
 \usepackage[bold]{otf}
 \usepackage{graphicx}
+\usepackage[japanese,english]{babel}
+\addto\captionsjapanese{
+  \renewcommand{\contentsname}
+    {目 次}
+  \renewcommand{\notesname}
+    {注}
+}
+\addto\captionsenglish{
+  \renewcommand{\contentsname}
+    {Contents}
+  \renewcommand{\notesname}
+    {Notes}
+}
 \urlstyle{rm}
+
 \begin{document}
 \twocolumn[
 \voltitle{41}{2016}
@@ -41,7 +55,7 @@
  トを説明した文章です。この文章自体が執筆要領を兼ねておりますので，この
  ファイルをそのまま使用して論文を作成することを推奨します。
 \end{abstract}
- \begin{keyword}
+\begin{keyword}
 キーワード： 生涯学習基盤経営，執筆要領，レイアウト
 \end{keyword}
 \end{center}
@@ -50,6 +64,11 @@
 
 \initialize
 ]
+
+\selectlanguage{japanese}
+% 英語論文を執筆するときは上行をコメントアウトし、下行をコメントインしてください
+% \selectlanguage{english}
+
 \tableofcontents{}
 \bigskip{}
 \section{はじめに}

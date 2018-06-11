@@ -36,13 +36,17 @@
 \usepackage{multicol}
 \usepackage{graphics}
 \usepackage{boxedminipage}
-\usepackage{url} 
+\usepackage[obeyspaces,hyphens,spaces]{url}
+	\urlstyle{rm}
 \usepackage{endnotes}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage[bold]{otf}
 
 \topmargin=-2.7cm
 %\topmargin=-3.25cm
 \headheight=0cm
-\oddsidemargin=-1.2cm  
+\oddsidemargin=-1.2cm
 \setlength{\textwidth}{46zw}
 \setlength{\textheight}{44\baselineskip}
 \columnsep=0.7cm
@@ -88,7 +92,7 @@
 % ref: http://osksn2.hep.sci.osaka-u.ac.jp/~naga/miscellaneous/tex/tex-tips2.html
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\abovecaptionskip=0pt
+\abovecaptionskip=4pt
 \belowcaptionskip=0pt
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,7 +108,7 @@
 \makeatletter%% プリアンブルで定義する場合は必須
 
 \renewenvironment{enumerate}%% enumerate 環境を再定義
-  {\ifnum \@enumdepth >\thr@@\@toodeep\else% 
+  {\ifnum \@enumdepth >\thr@@\@toodeep\else%
    \advance\@enumdepth\@ne
    \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
    \list{\csname label\@enumctr\endcsname}{%
@@ -129,7 +133,7 @@
 \makeatletter%% プリアンブルで定義する場合は必須
 
 \renewenvironment{itemize}%% itemize 環境を再定義
-  {\ifnum \@itemdepth >\thr@@\@toodeep\else 
+  {\ifnum \@itemdepth >\thr@@\@toodeep\else
    \advance\@itemdepth\@ne
    \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
    \expandafter
@@ -204,16 +208,16 @@
 %ref:http://xymtex.com/ 「LaTeX2eまくろのやちまた」第14章から第17章
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
-\def\numberline#1{\hbox to3.1zw{#1\hfil}} 
-\def\@dottedtocline#1#2#3#4#5{\ifnum #1>\c@tocdepth \else 
-\vskip \z@ plus .2pt 
-{\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip 
-\parindent #2\relax\@afterindenttrue 
-\interlinepenalty\@M 
-\leavevmode 
+\def\numberline#1{\hbox to3.1zw{#1\hfil}}
+\def\@dottedtocline#1#2#3#4#5{\ifnum #1>\c@tocdepth \else
+\vskip \z@ plus .2pt
+{\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip
+\parindent #2\relax\@afterindenttrue
+\interlinepenalty\@M
+\leavevmode
 \@tempdima #3\relax \advance\leftskip \@tempdima \hbox{}\hskip
--\leftskip  #4\hbox to0.33333zw{\hss\raise.4zh\hbox{}\hss}\hfill 
-\nobreak \hbox to\@pnumwidth{\hfil\rm}\par}\fi} 
+-\leftskip  #4\hbox to0.33333zw{\hss\raise.4zh\hbox{}\hss}\hfill
+\nobreak \hbox to\@pnumwidth{\hfil\rm}\par}\fi}
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -227,7 +231,7 @@
 \ifx\@tempb\empty
 \begin{flushleft}
 {\LARGE
-  {\renewcommand{\baselinestretch}{1}\selectfont 
+  {\renewcommand{\baselinestretch}{1}\selectfont
     \bf #1 \\}}{}
 \end{flushleft}
 \vspace{1mm}
@@ -241,7 +245,7 @@
 %\ifx\@tempb\empty
 %\begin{flushleft}
 %{\LARGE
-%  {\renewcommand{\baselinestretch}{1}\selectfont 
+%  {\renewcommand{\baselinestretch}{1}\selectfont
 %    \bf #1 \\}}{}
 %\end{flushleft}
 %\else
@@ -258,7 +262,7 @@
 \def\etitle#1{
  \begin{center}
 {\Large
-	{\renewcommand{\baselinestretch}{1.2}\selectfont 
+	{\renewcommand{\baselinestretch}{1.2}\selectfont
           \bf #1\\[2mm] }
 	}{}
  \end{center}

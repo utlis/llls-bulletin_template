@@ -15,6 +15,20 @@
 \usepackage[size=a4paper,priority=high]{bxpapersize}
 \usepackage{llls}
 \usepackage{graphicx}
+\usepackage[japanese,english]{babel}
+\addto\captionsjapanese{
+  \renewcommand{\contentsname}
+    {目 次}
+  \renewcommand{\notesname}
+    {注}
+}
+\addto\captionsenglish{
+  \renewcommand{\contentsname}
+    {Contents}
+  \renewcommand{\notesname}
+    {Notes}
+}
+\urlstyle{rm}
 
 \begin{document}
 \twocolumn[
@@ -41,11 +55,16 @@
     ファイルをそのまま使用して論文を作成することを推奨します。
   \end{abstract}
   \begin{keyword}
-    キーワード： 生涯学習基盤経営，執筆要領，レイアウト
+    キーワード：生涯学習基盤経営，執筆要領，レイアウト
   \end{keyword}
 \end{center}
 \initialize
 ]
+
+\selectlanguage{japanese}
+% 英語論文を執筆するときは上行をコメントアウトし、下行をコメントインしてください
+% \selectlanguage{english}
+
 \tableofcontents{}
 \bigskip{}
 
@@ -81,11 +100,22 @@ Microsoft Word\textsuperscript{\textregistered}（以下，Word）の
 と2つの引数を取ります。本マニュアルでは，この2つの引数をコマンド
 の左側からそれぞれ，第1引数，第2引数と呼ぶこととします。
 
+テンプレートファイルのアーカイブには，latexmkの設定ファイルである``.latexmkrc''も
+同封されています。latexmkは文書を作成する際に必要な回数分のタイプセットを自動で行ってく
+れるツールです。コマンドラインで
+\begin{verbatim}
+latexmk llls_bulletin_template.tex
+\end{verbatim}
+などと打つとコンパイルが実行され，PDFが生成されます。\verb|-pvc|オプションをつけると
+コンパイル終了後，設定ファイルの\verb|$pdf_previewer|で指定したツールでPDFを
+プレビューできます。その後もファイルの変更を検知したら再度コンパイルを実行してくれるため
+非常に便利です。ぜひ活用しましょう。
+
 \section{原稿について}
 A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicrosoft社のWordによっ
 て，原稿を作成してください。作成の際には，必ずテンプレートファイルに基づ
-き，印刷原稿にトンボが適切に出力されるように，作成して下さい。（紀要
-はB5サイズで印刷されます）
+き，印刷原稿にトンボが適切に出力されるように，作成して下さい（紀要
+はB5サイズで印刷されます）。
 
 \section{全体的なレイアウトについて}
 \subsection{段組および字数・行数}
@@ -419,8 +449,7 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
 \noindent{}\textbf{例1（引用符使用）}\\
 澤田昭夫はよい論文について``よい論文は統一unity，連関coherence，
 展開developmentにおいて優れた論文あるいは明確性clarityにおいて優れた論
-文''\footnote{澤田昭夫. 『論文のレトリック』 講談社学術文庫, 講談社，1983, 330p. 引用は
-p.~19}であると述べている。
+文''\footnote{澤田昭夫 『論文のレトリック』 講談社, 1983, 330p, p.~19.}であると述べている。
 
 \noindent{}\textbf{例2（quotation環境使用）}\\
 澤田は論文執筆の際に次のようなことが重要だと述べている。
@@ -575,13 +604,12 @@ URLの記述には\verb|\url|コマンドを使ってください。
 \subsubsection{英文タイトル}
 論題に対応する英文タイトルを記入します。\verb|\etitle|コマンドの引数
 に対応するタイトルを記入してください。
-文中の冠詞と前置詞と接続詞を除いて，各語の先頭は大文字とします。
-
+タイトルにはsentence caseを用いてください。文頭の単語と文中の固有名詞の先頭のみを大文字とする書き方です。
 
 \begin{verbatim}
-\etitle{Manual of Writing a Manuscript
-for Articles, Research Notes, and
-Materials in \textit{Studies in Lifelong
+\etitle{Manual of writing a manuscript
+for articles, research notes, and
+materials in \textit{Studies in Lifelong
 Learning Infrastructure Management}}
 \end{verbatim}
 

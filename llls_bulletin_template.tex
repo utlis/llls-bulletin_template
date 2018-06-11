@@ -546,46 +546,19 @@ URLの記述には\verb|\url|コマンドを使ってください。
 することになります。
 
 \LaTeX{}の場合には，テンプレートファイルの最後に英文要約作成エリ
-アが用意されています。テンプレートファイル上では，以下の箇所が該当します。
+アが用意されています。テンプレートファイル上では，
 
-\small{}
+\small
 \begin{verbatim}
 %--------------------------------------
-%英文要約作成用エリア（\eauthors,
+%英文要約作成用エリア（\eauthors，
 %\eaffiliation，\etitle，
-%\eabstract,\keywordの欄を書き換えて使う）
+%\abstract, \keywordの欄を書き換えて使う）
 %--------------------------------------
-\newpage
-\twocolumn[
-\begin{center}
-\etitle{Manual of Writing a Manuscript for
-Articles, Research Notes, and
- Materials in \textit{Studies in Lifelong
-Learning Infrastructure Management}}
-\begin{eauthors}
-\name{1}{Yahoi HONGO} \name{2}{Tarou TOUDAI}
-\end{eauthors}
-\begin{eaffiliation}
-\eaff{1}{Graduate School of Education,
-the University of Tokyo}
- \eaff{2}{Society for Lifelong Learning
-Infrastructure Management}
-\end{eaffiliation}
- \begin{eabstract}
-The paper describes style and layout of
-manuscripts in \textit{the Studies in
-Lifelong Learning Infrastructure
-Management}. You can use directly this
-  file when you make your manuscript.
- \end{eabstract}
-\begin{keyword}
-Keyword: Studies in Lifelong Learning
-Infrastructure Management, Script Manual, Layout
-\end{keyword}
-\end{center}
-]
 \end{verbatim}
 \normalsize
+
+と記述されている部分から下のコードが該当します。
 
 \subsubsection{作成エリア上の必須環境，必須コマンド}
 まず，作成エリア直後のおよび末尾の以下のコマンドは，文章整形のために必要
@@ -709,31 +682,31 @@ Tokyo''で統一するようお願いいたします。
 \begingroup \parindent 0ex \parskip 0.5ex \def\ennotesize{\normalsize}
 \theendnotes \endgroup
 %--------------------------------------
-%英文要約作成用エリア（\eauthors，\eaffiliation，\etitle，
+%英文要約作成用エリア（\eauthors，
+%\eaffiliation，\etitle，
 %\abstract, \keywordの欄を書き換えて使う）
 %--------------------------------------
 \newpage
 \twocolumn[
-
 \begin{center}
-\etitle{Manual of Writing a Manuscript for Articles, Research Notes, and
- Materials in \textit{Studies in Lifelong Learning Infrastructure Management}}
-\begin{eauthors}
-\name{1}{Yahoi HONGO} \name{2}{Tarou TOUDAI}
-\end{eauthors}
-\begin{eaffiliation}
-\eaff{1}{Graduate School of Education, the University of Tokyo}
- \eaff{2}{Society for Lifelong Learning Infrastructure Management}
-\end{eaffiliation}
- \begin{eabstract}
-The paper describes style and layout of manuscripts in \textit{the Studies in
-  Lifelong Learning Infrastructure Management}. You can use
-  directly this
-  file when you make your manuscript.
- \end{eabstract}
-\begin{keyword}
-Keywords: Studies in Lifelong Learning Infrastructure Management, Script Manual, Layout
-\end{keyword}
+  \etitle{Manual of Writing a Manuscript for Articles, Research Notes, and
+  Materials in \textit{Studies in Lifelong Learning Infrastructure Management}}
+  \begin{eauthors}
+    \name{1}{Yayoi HONGO} \name{2}{Tarou TOUDAI}
+  \end{eauthors}
+  \begin{eaffiliation}
+    \eaff{1}{Graduate School of Education, the University of Tokyo}
+    \eaff{2}{Society for Lifelong Learning Infrastructure Management}
+  \end{eaffiliation}
+  \begin{eabstract}
+    The paper describes style and layout of manuscripts in \textit{the Studies in
+    Lifelong Learning Infrastructure Management}. You can use
+    directly this
+    file when you make your manuscript.
+  \end{eabstract}
+  \begin{keyword}
+    Keywords: Studies in Lifelong Learning Infrastructure Management, Script Manual, Layout
+  \end{keyword}
 \end{center}
 ]
 

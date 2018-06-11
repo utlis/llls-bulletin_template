@@ -42,6 +42,19 @@
 \usepackage{textcomp}
 \usepackage{booktabs}
 \usepackage[bold]{otf}
+\usepackage[japanese,english]{babel}
+\addto\captionsjapanese{
+  \renewcommand{\contentsname}
+    {目 次}
+  \renewcommand{\notesname}
+    {注}
+}
+\addto\captionsenglish{
+  \renewcommand{\contentsname}
+    {Contents}
+  \renewcommand{\notesname}
+    {Notes}
+}
 
 \topmargin=-2.7cm
 %\topmargin=-3.25cm

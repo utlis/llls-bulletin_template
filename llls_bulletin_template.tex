@@ -440,10 +440,10 @@ p.~19}であると述べている。
 本テンプレートファイルでは，注および文献については\verb|\footnote|コ
 マンドを
 使用し，全て文末に記載します。ページごとの注（脚注）及び独立した節としての参考文献リスト（\texttt{bibitem}，\texttt{bibtex}を使った記述）は用いません。
-注・文献における文献の記載方法は次の例に従ってください\footnote{特に、ページ番号には En dash ( -- ; \LaTeX 上ではハイフン2個 \texttt{ --} で出力できる) を必ず用いるようにしましょう。}。
-（なお，記載方
+注・文献における文献の記載方法は次の例に従ってください\footnote{特に、ページ番号には En dash ( -- ; \LaTeX{} 上ではハイフン2個 \texttt{ --} で出力できる) を必ず用いるようにし、ページ番号を意味する符号としての``p.''と数字の間には non-breaking space \texttt{\~}を使いましょう。}。
+なお，記載方
 法の中で，\{\}で囲まれた項目の記述は任意です。例えば，図書の場合は``版
-表示''，``出版地''，``総ページ数''が任意の記述項目です。）
+表示''，``出版地''，``総ページ数''が任意の記述項目です。
 
 \subsubsection{図書の場合}
 \noindent{}和：著編者名 『書名』 \{版表示,\} \{出版地,\} 出版社, 出版年, \{総
@@ -452,48 +452,46 @@ p.~19}であると述べている。
 洋：author. \textit{title}. \{edition,\} place of publication,
 publisher, year, \{total page,\} page.
 \begin{quote}
- 近藤二郎 『社会科学のための数学入門』 東京経済新報社, 1973,
- p. 37--40.
+  近藤二郎 『社会科学のための数学入門』 東京経済新報社, 1973,
+  p.~37--40.
 
- Barzun, Jacques and Graff, H. F. \textit{The Modern Researcher.}
- Rev. ed., \\New York, Harcourt, 1970, p. 165.
+  Barzun, Jacques and Graff, H. F. \textit{The Modern Researcher.}
+  Rev.\ ed., \\New York, Harcourt, 1970, p.~165.
 \end{quote}
 
 
 \subsubsection{翻訳書の場合}
-\noindent{}和：著編者名 『書名』[原書名(イタリックで記載) \{版表示,\}
+\noindent{}和：著編者名 『書名』[原書名（イタリック体） \{版表示,\}
 \{出版地, \} 出版社, 出版年,] 翻訳者名, 出版社, 出版年, \{総
 \bigskip
 ページ数,\} 当該部分のページ.\\
 洋：author. \textit{title of translation}. [\textit{original
-title}. \{edition,\} place of publication, publisher, year,] tr. by
+title}. \{edition,\} place of publication, publisher, year,] tr.\ by
 translator, place of publication, publisher, year, \{total page,\} page.
 
 \begin{quote}
-Varles, Jana ed. 『情報の要求と探索』 [\textit{Information Seeking:
- Basing Services on User's Behaviors.} North Calolina,
- McFarland \& Company, 1987] 池谷のぞみ, 市古健次, 白石英理子, 田村俊作訳,
- 勁草書房, 1993, p. 10.
+  Varles, Jana ed. 『情報の要求と探索』 [\textit{Information Seeking:
+  Basing Services on User's Behaviors.} North Calolina,
+  McFarland \& Company, 1987] 池谷のぞみ, 市古健次, 白石英理子, 田村俊作訳,
+  勁草書房, 1993, p.~10.
 
-Schneider, Georg. \textit{Theory and History of Bibliography.}
- [\textit{Handbuch der Bibliographie.} Aufl., Berlin, Knopt, 1978,]
- tr. by R. R. Shaw, New York, Columbia University Press, 1934, p. 14--15.
+  Schneider, Georg. \textit{Theory and History of Bibliography.}
+  [\textit{Handbuch der Bibliographie.} Aufl., Berlin, Knopt, 1978,]
+  tr.\ by R. R. Shaw, New York, Columbia University Press, 1934, p.~14--15.
 \end{quote}
 
 \subsubsection{編集書の一部（図書形態の論文集の一論文を含む）の場合}
-\noindent{}和：当該部分の執筆者名 ``当該部分の題名'' $<$編者名 『書名』 \{版表示,\} \{出版地,\} 出版社, 出版年$>$ \{総
-\bigskip
-ページ数,\} 当該部分のページ.\\
+\noindent{}和：当該部分の執筆者名 ``当該部分の題名'' 〈編者名 『書名』 \{版表示,\} \{出版地,\} 出版社, 出版年〉 \{総ページ数,\} 当該部分のページ. \bigskip \\
 洋：author. ``\textit{title},'' in editor. \textit{book title}, \{edition,\} place of publication,
 publisher, year, \{total page,\} page.
 
 \begin{quote}
-宮坂広作　``余暇と社会教育'' $<$碓井正久編著 『社会教育』 第一法規,
- 1970$>$ p. 201--203.
+  宮坂広作　``余暇と社会教育'' 〈碓井正久編著 『社会教育』 第一法規,
+  1970〉 p.~201--203.
 
-Groom, Geofrey. ``\textit{Bibliography of older material},'' in Garvin,
- L. H. ed. \textit{Printed Reference Material.} 2nd ed., London, Library
- Association, 1984, p. 456--501.
+  Groom, Geofrey. ``\textit{Bibliography of older material},'' in Garvin,
+  L. H. ed. \textit{Printed Reference Material.} 2nd ed., London, Library
+  Association, 1984, p.~456--501.
 \end{quote}
 
 
@@ -505,18 +503,18 @@ Groom, Geofrey. ``\textit{Bibliography of older material},'' in Garvin,
 
 
 \begin{quote}
-小野寺夏生 ``Bibliostatistics'': 情報現象の統計学的説明'' 『情報管理』
- vol. 21, no. 10, 1979, p. 782--802.
+  小野寺夏生 ``Bibliostatistics'': 情報現象の統計学的説明'' 『情報管理』
+  vol.~21, no.~10, 1979, p.~782--802.
 
-小野寺夏生, 中井浩 ``単純なモデルからのZipfの法則の導入'' 『情報科学技術
- 研究集会論文集』 vol. 33, no. 3, 1977, p. 129--138.
+  小野寺夏生, 中井浩 ``単純なモデルからのZipfの法則の導入'' 『情報科学技術
+  研究集会論文集』 vol.~33, no.~3, 1977, p.~129--138.
 
-Brookes, Bertram C. ``Theory of the Bradford Laws,'' \textit{Journal of
- Documentation,} vol. 33, no. 3, 1977, p. 180--209.
+  Brookes, Bertram C. ``Theory of the Bradford Laws,'' \textit{Journal of
+  Documentation,} vol.~33, no.~3, 1977, p.~180--209.
 
-Nelson, Micheal J. and Tague, Jean M. ``Sprit Size-Rank Models for the
- Distribution of Index Terms,'' \textit{Journal of the American Society
- for Information Science,} vol. 36, no. 5, 1985, p. 283--296.
+  Nelson, Micheal J. and Tague, Jean M. ``Sprit Size-Rank Models for the
+  Distribution of Index Terms,'' \textit{Journal of the American Society
+  for Information Science,} vol.~36, no.~5, 1985, p.~283--296.
 \end{quote}
 
 \subsubsection{Web上のリソースについて}
@@ -534,9 +532,9 @@ URLの記述には\verb|\url|コマンドを使ってください。
 \subsubsection{書誌事項の記載における省略語の使用について}
 
 同一文献を二度以上引用する場合は，和文文献，欧文文献どちらの場合でも，
-\textit{op. cit.}（前掲文献の意）\textit{Ibid.}（上掲文献の意）を用います。
-こちらはイタリック体（斜字体）の代わりに下線を用いても良いこととします。
-な\textit{op. cit.}を用いる場合，name,\textit{op. cit.}, (year,) p. Xのように記載します。
+イタリック体（\verb|\textit|コマンド）で\textit{op.\ cit.}（前掲文献の意）\textit{Ibid.}（上掲文献の意）を用います。
+なお\textit{op.\ cit.}を用いる場合，``name, \textit{op.\ cit.}, (year,) p.~X''のように記載します。
+また、opの直後のピリオドとcitの間の空白を単語間スペースとして明示するため、バックスラッシュを用いて\verb|op.\ cit.|のように記述してください。
 \textit{Ibid.}を用いる場合については，本文末注3の使用例を参照してください。
 
 

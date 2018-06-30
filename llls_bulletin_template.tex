@@ -1,20 +1,15 @@
 \documentclass[b5paper,10pt,twocolumn,tombow]{jarticle}
 \usepackage[size=a4paper,priority=high]{bxpapersize}
 \usepackage{llls}
+% 追加したいパッケージやマクロは以下に記述してください
 \usepackage{graphicx}
 
-% == 執筆言語設定 ==
-\selectlanguage{japanese}
-% 英語論文を執筆するときは上行をコメントアウトし，下行から\makeatotherまでをコメントインしてください
-% \selectlanguage{english}  % 目次・図表タイトルを英語に変更
-% \setlength{\parindent}{2em}  % 段落の字下げを多めにする
-% \makeatletter  % 見出しの直後の段落を字下げしない
-%  \let\@afterindenttrue\@afterindentfalse
-% \makeatother   % 英語設定ここまで
-
 \begin{document}
+% \English  % 全編英語にしたい場合はこの行をコメントアウトしてください
+% またtitleやabstractのコマンド名を英語版のものに入れ替えてください
+
 \twocolumn[
-\voltitle{41}{2016}
+\voltitle{XX}{XXXX}
 
 \begin{center}
   \jtitle{『生涯学習基盤経営』における論文等の執筆マニュアル}{---\LaTeX{}
@@ -166,14 +161,9 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
 \subsection{号数，出版年}
 紀要の号数並びに出版年を記入します。
 
-\verb|\voltitle|コマンドの中に，投稿する号に合わせて``号数''と``出版
+\verb|\voltitle{}{}|コマンドの中に，投稿する号に合わせて``号数''と``出版
 年''を記入します。コマンドの第1引数には``号数''を半角のアラビア数字で，
 第2引数には``出版年''を西暦かつ半角のアラビア数字で記入してください。
-\begin{verbatim}
-\voltitle{NUMBER}{YEAR}
-\end{verbatim}
-
-
 例えば，2010年度の35号であれば，
 \begin{verbatim}
 \voltitle{35}{2010}

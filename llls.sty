@@ -42,7 +42,7 @@
 \usepackage{textcomp}
 \usepackage{booktabs}
 \usepackage[bold]{otf}
-\usepackage[japanese,english]{babel}
+\usepackage[english,japanese]{babel}
 \addto\captionsjapanese{
   \renewcommand{\contentsname}
     {目 次}
@@ -53,7 +53,14 @@
   \renewcommand{\contentsname}
     {Contents}
   \renewcommand{\notesname}
-    {Notes}
+    {Endnotes}
+}
+\newcommand{\English}{%
+	\selectlanguage{english}
+	\setlength{\parindent}{2em}  % 段落の字下げを多めにする
+	\makeatletter  % 見出しの直後の段落を字下げしない
+		\let\@afterindenttrue\@afterindentfalse%
+	\makeatother   % 英語設定ここまで
 }
 
 \topmargin=-2.7cm
@@ -66,7 +73,6 @@
 \hoffset=-.5in% 左へ 0.5インチ版面全体を移動
 
 \let\footnote=\endnote
-\renewcommand{\notesname}{注}
 \pagestyle{empty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

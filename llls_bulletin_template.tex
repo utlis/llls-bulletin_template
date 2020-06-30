@@ -12,7 +12,7 @@
 \voltitle{XX}{XXXX}
 
 \begin{center}
-  \jtitle{『生涯学習基盤経営』における論文等の執筆マニュアル}{---\LaTeX{}
+  \jtitle{{\Large 論文/研究ノート/資料} \\『生涯学習基盤経営』における論文等の執筆マニュアル}{---\LaTeX{}
   バージョン---}
 \end{center}
 
@@ -274,6 +274,7 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
 については特定の用法で使ってください。
 \begin{table}[h!]
   \center
+  \caption{特定の記号の用法}
   \small
   \begin{tabular}{cl}
     \toprule
@@ -283,9 +284,9 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
     ``　'' & 引用箇所の表示 \\
     \textit{Italic} & 文中における欧文の書名・誌名 \\
     『 』 & 文中における和文の書名・誌名 \\
+    「 」 & 文中における和文の政策文書 \\
     \bottomrule
   \end{tabular}
-  \caption{特定の記号の用法}
 \end{table}
 \normalsize
 
@@ -337,12 +338,13 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
 \subsubsection*{（２）表について}
 \paragraph*{小さな表の場合}
 下記のように，\texttt{table}環境と\texttt{tabular}環境，\verb|\caption|コマンドを使用し，表の
-下部に対応するcaptionを設定してください。
+上部に対応するcaptionを設定してください。
 罫線には\texttt{booktabs}パッケージの\texttt{toprule}/\texttt{midrule}/\texttt{bottomrule}を使用します。
 
 \begin{verbatim}
 \begin{table}[tb]
   \centering
+  \caption{小さな表の例}
   \begin{tabular}{cc}
     \toprule
     日本語 & 英語 \\
@@ -352,12 +354,12 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
     学部生 & undergraduate \\
     \bottomrule
   \end{tabular}
-  \caption{小さな表の例}
 \end{table}
 \end{verbatim}
 
 \begin{table}[tb]
   \centering
+  \caption{小さな表の例}
   \begin{tabular}{cc}
     \toprule
     日本語 & 英語 \\
@@ -367,18 +369,18 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
     学部生 & undergraduate \\
     \bottomrule
   \end{tabular}
-  \caption{小さな表の例}
 \end{table}
 
 \paragraph*{大きな表の場合}
 段をまたぐような大きな表を使用したい場合は，「小さな表の場合」で用いた
 \texttt{table}環境の代わりに，\texttt{table*}環境を利
 用します。その上で，\texttt{tabular}環境，\verb|\caption|コ
-マンドを使用し，表と表の下部に対応するcaptionが設定されるようにしてください。
+マンドを使用し，表と表の上部に対応するcaptionが設定されるようにしてください。
 
 \begin{verbatim}
 \begin{table*}[tb]
   \centering
+  \caption{大きな表の例}
   \begin{tabular}{cc}
     \toprule
     日本語 & 英語 \\
@@ -388,12 +390,12 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
     学部生 & undergraduate \\
     \bottomrule
   \end{tabular}
-  \caption{大きな表の例}
 \end{table*}
 \end{verbatim}
 
 \begin{table*}[tb]
   \centering
+  \caption{大きな表の例}
   \begin{tabular}{cc}
     \toprule
     日本語 & 英語 \\
@@ -403,7 +405,6 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
     学部生 & undergraduate \\
     \bottomrule
   \end{tabular}
-  \caption{大きな表の例}
 \end{table*}
 
 
@@ -448,6 +449,10 @@ A4版を使用し，原則として投稿段階から\LaTeX{}あるいはMicroso
 表示''，``出版地''，``総ページ数''が任意の記述項目です。
 
 注・文献において同一の著者が複数回出現する場合，2回目以降は著者の姓を記述するのみで構いませんが，同姓の著者が他にいる場合は常にフルネームで記述してください。
+
+欧文文献の書名や雑誌名，及び論文名は, 最初の単語と固有名詞の一文字目だけを大文字にしてください（センテンスケース）。
+
+著者名と書名・論文名の間には半角スペースを挿入してください。
 
 \subsubsection{図書の場合}
 \noindent{}和：著編者名 『書名』 \{版表示,\} \{出版地,\} 出版社, 出版年, \{総

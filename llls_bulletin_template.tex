@@ -12,7 +12,7 @@
 
 \begin{center}
   \jtitle{{\Large 論文/研究ノート/資料} \\『生涯学習基盤経営』における論文等の執筆マニュアル}{---\LaTeX{}
-  バージョン（多言語サンプル：\foreignlanguage{korean}{한국어}、\foreignlanguage{schinese}{简体中文}、\foreignlanguage{tchinese}{繁體中文}）---}
+  バージョン（多言語サンプル：한국어，简体中文，繁體中文）---}
 \end{center}
 
 \begin{authors}
@@ -28,7 +28,7 @@
   \begin{abstract}
     この文章は『生涯学習基盤経営』の論文等（論文，研究ノート，資料）のレイアウ
     トを説明した文章です。この文章自体が執筆要領を兼ねておりますので，この
-    ファイルをそのまま使用して論文を作成することを推奨します。（多言語サンプル：\foreignlanguage{korean}{한국어}、\foreignlanguage{schinese}{简体中文}、\foreignlanguage{tchinese}{繁體中文}）
+    ファイルをそのまま使用して論文を作成することを推奨します。（多言語サンプル：한국어，简体中文，繁體中文）
 
   \end{abstract}
   \begin{keyword}
@@ -47,7 +47,6 @@
 ルをそのまま使用して論文を作成することを推奨します。本稿をよくお読みいた
 だき，原稿を作成して下さい。
 
-
 なお，このファイルでは\LaTeX{}のレイアウトが記載されています。
 Microsoft Word\textsuperscript{\textregistered}（以下，Word）の
 レイアウト規定を確認されたい場合には，Wordのテンプレートファイルをご参照
@@ -55,11 +54,32 @@ Microsoft Word\textsuperscript{\textregistered}（以下，Word）の
 \footnote{情報メディア学会 ``『情報メディア研究』への各種原稿の投稿につい
 て'' 入手先URL:\url{http://www.jsims.jp/toko.html} （2008-10-27参照）}。
 
-\LaTeX{}のテンプレートファイルを使用する場合にはスタイルファイルが必要です。
+\LaTeX{}のテンプレートファイルを使用する場合にはスタイルファイルとフォントファイルが必要です。
+
 テンプレートファイルのアーカイブにスタイルファイルが同封してあります。テ
 ンプレートファイルと同じディレクトリに設置するか，\LaTeX{}のスタイルファイ
 ル格納場所（環境によって異なります）に設置して利用してください。現在のス
 タイルファイル名は\texttt{llls.sty}です。
+
+現在のスタイルファイルではフォントにNoto CJKを採用しています。
+下記URLから「OpenType/CFF Collection (OTC)」カテゴリ下にあるファイルを全てダウンロードし，
+インストールしてください（Windowsの場合，フォントのインストールには「自分用」と「全ユーザ用」の2つの方法がありますが，
+TeXでも使えるようにするにはフォントを「全ユーザ用」でインストールする必要があります）。
+
+\begin{verbatim}
+https://www.google.com/get/noto/help/cjk/
+\end{verbatim}
+
+インストールが完了したら，下記コマンドでフォントがTeXから見える状態にあるかどうかを確認しましょう。
+フォントのパスが表示されたら準備完了です。
+
+\begin{verbatim}
+  kpsewhich NotoSerifCJK-Regular.ttc
+  kpsewhich NotoSansCJK-Black.ttc
+\end{verbatim}
+
+フォントの設定にはpxchfonパッケージを使用しています。設定が上手くいかない場合は
+パッケージのマニュアルを読むことをおすすめします。
 
 \LaTeX{}の原稿執筆には環境，並びにコマンドを使用します。本テンプレートファ
 イルにおいて，環境とは\verb|\begin{**}|で始まり，\verb|\end{**}|
